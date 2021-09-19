@@ -49,7 +49,7 @@ if ($_SESSION['compras']==1) {
       <th>Usuario</th>
       <th>Documento</th>
       <th>Número</th>
-      <th>Total Compra</th>
+      <th class="text-danger"></th>
       <th>Estado</th>
     </tfoot>   
   </table>
@@ -67,12 +67,7 @@ if ($_SESSION['compras']==1) {
       <label for="">Fecha(*): </label>
       <input class="form-control" type="date" name="fecha_hora" id="fecha_hora" required>
     </div>
-     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Tipo Comprobante(*): </label>
-     <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required>
-     <option value="Ticket">Ticket</option>
-         </select>
-    </div>
+  
      <div class="form-group col-lg-2 col-md-2 col-xs-6">
       <label for="">Serie: </label>
       <input class="form-control" type="text" name="serie" id="serie" maxlength="17" placeholder="Serie">
@@ -80,10 +75,6 @@ if ($_SESSION['compras']==1) {
      <div class="form-group col-lg-2 col-md-2 col-xs-6">
       <label for="">Numero: </label>
       <input class="form-control" type="text" name="num_comprobante" id="num_comprobante" maxlength="10" placeholder="Número" >
-    </div>
-    <div class="form-group col-lg-2 col-md-2 col-xs-6">
-      <label for="">mesa: </label>
-      <input class="form-control" type="text" name="mesa" id="mesa">
     </div>
     <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
      <a data-toggle="modal" href="#myModal">

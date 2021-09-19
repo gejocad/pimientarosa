@@ -39,12 +39,6 @@ if ($_SESSION['ventas']==1) {
       <label for="">Fecha(*): </label>
       <input class="form-control" type="date" name="fecha_hora" id="fecha_hora" required>
     </div>
-     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Tipo Comprobante(*): </label>
-     <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required>
-       <option value="Ticket">Factura</option>
-     </select>
-    </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Mesa(*): </label>
      <select name="mesa" id="mesa" class="form-control selectpicker" required>

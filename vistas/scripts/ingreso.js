@@ -24,7 +24,6 @@ function limpiar(){
 	$("#proveedor").val("");
 	$("#serie_comprobante").val("");
 	$("#num_comprobante").val("");
-	$("#mesa").val("");
 
 	$("#total_compra").val("");
 	$(".filas").remove();
@@ -38,8 +37,6 @@ function limpiar(){
 	$("#fecha_hora").val(today);
 
 	//marcamos el primer tipo_documento
-	$("#tipo_comprobante").val("Ticket");
-	$("#tipo_comprobante").selectpicker('refresh');
 
 }
 
@@ -74,7 +71,7 @@ function cancelarform(){
 
 //funcion listar
 function listar(){
-	tabla=$('#tbllistado').dataTable({
+	tabla=$('#tbllistado').DataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
@@ -95,8 +92,20 @@ function listar(){
 		},
 		"bDestroy":true,
 		"iDisplayLength":5,//paginacion
-		"order":[[0,"desc"]]//ordenar (columna, orden)
-	}).DataTable();
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		"footerCallback": function () {
+        
+            total = this.api()
+                .column(6)//numero de columna a sumar
+                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                .data()
+                .reduce(function (a, b) {
+                    return parseInt(a) + parseInt(b);
+                }, 0 );
+
+            $(this.api().column(6).footer()).html(total);
+            
+        }})
 }
 
 function listarArticulos(){
@@ -158,7 +167,6 @@ function mostrar(idingreso){
 			$("#serie_comprobante").val(data.serie_comprobante);
 			$("#num_comprobante").val(data.num_comprobante);
 			$("#fecha_hora").val(data.fecha);
-			$("#mesa").val(data.mesa);
 			$("#idingreso").val(data.idingreso);
 			
 			//ocultar y mostrar los botones
@@ -186,21 +194,13 @@ function anular(idingreso){
 }
 
 //declaramos variables necesarias para trabajar con las compras y sus detalles
-var mesa=0;
 var cont=0;
 var detalles=0;
 
 $("#btnGuardar").hide();
-$("#tipo_comprobante").change(marcarImpuesto);
 
-function marcarImpuesto(){
-	var tipo_comprobante=$("#tipo_comprobante option:selected").text();
-	if (tipo_comprobante=='Factura') {
-		$("#mesa").val(mesa);
-	}else{
-		$("#mesa").val("0");
-	}
-}
+
+
 
 function agregarDetalle(idarticulo,articulo){
 	var cantidad=1;

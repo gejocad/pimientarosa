@@ -38,9 +38,7 @@ if ($_SESSION['consultav']==1) {
     <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" value="<?php echo date("Y-m-d"); ?>">
   </div>
   <div class="form-inline col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <label>Cliente</label>
-    <select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true" required>
-    </select>
+  
     <br>
     <button class="btn btn-success" onclick="listar()">
       Mostrar</button>

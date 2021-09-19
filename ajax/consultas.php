@@ -35,9 +35,8 @@ switch ($_GET["op"]) {
      case 'ventasfechacliente':
     $fecha_inicio=$_REQUEST["fecha_inicio"];
     $fecha_fin=$_REQUEST["fecha_fin"];
-    $idcliente=$_REQUEST["idcliente"];
 
-        $rspta=$consulta->ventasfechacliente($fecha_inicio,$fecha_fin,$idcliente);
+        $rspta=$consulta->ventasfechacliente($fecha_inicio,$fecha_fin);
         $data=Array();
 
         while ($reg=$rspta->fetch_object()) {
