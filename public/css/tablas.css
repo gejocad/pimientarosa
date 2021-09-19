@@ -1,0 +1,11 @@
+.media-tabla{
+    max-width: 30px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+}
+.subcontenedor{
+    max-width: 60px;
+}

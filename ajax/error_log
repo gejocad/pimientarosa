@@ -1,0 +1,178 @@
+[28-Jul-2020 12:51:35 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[28-Jul-2020 14:54:46 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[28-Jul-2020 15:18:48 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[28-Jul-2020 15:45:09 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 10:31:43 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 10:53:49 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 10:54:17 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 10:59:46 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:00:26 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:07:16 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:09:15 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:10:51 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 11:29:41 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:33:32 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:33:58 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:37:00 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:39:47 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 11:44:41 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 11:55:30 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 11:59:05 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:07:26 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:10:48 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:11:46 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:12:49 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:15:10 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:27:02 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:27:26 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:27:28 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:27:28 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 12:28:10 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 13:54:09 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 14:30:48 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 14:35:42 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 14:41:23 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php:118
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/ingreso.php on line 118
+[29-Jul-2020 14:59:54 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 15:07:29 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 15:09:38 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[29-Jul-2020 15:18:49 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on bool in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php:128
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/venta.php on line 128
+[31-Jul-2020 16:53:01 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'detalle_articulo' not found in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php on line 4
+[31-Jul-2020 16:53:02 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'detalle_articulo' not found in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php on line 4
+[31-Jul-2020 16:53:13 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'detalle_articulo' not found in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php on line 4
+[31-Jul-2020 16:53:13 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'detalle_articulo' not found in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php on line 4
+[31-Jul-2020 16:58:15 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'detalle_articulo' not found in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php on line 4
+[31-Jul-2020 16:58:15 America/Bogota] PHP Fatal error:  Uncaught Error: Class 'detalle_articulo' not found in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/mantisar/facturador.mantisarauca.com/ajax/imei.php on line 4
+[03-Aug-2020 14:34:26 America/Bogota] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/mantisar/facturator.mantisarauca.com/modelos/Ventam.php on line 20
+[28-Aug-2020 11:11:57 America/Bogota] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/mantisar/facturator.mantisarauca.com/modelos/Ventam.php on line 20
