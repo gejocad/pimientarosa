@@ -29,6 +29,8 @@
 <script src="../public/js/bootbox.min.js"></script>
 <script src="../public/js/bootstrap-select.min.js"></script>
 <script src="//cdn.datatables.net/plug-ins/1.11.2/api/sum().js"></script>
+<script type="text/javascript" src="../public/datatables/numeric-comma.js"></script>
+
 
 </body>
 </html>

@@ -96,8 +96,8 @@ function listar(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(6)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(6)numero de columna a sumar
+                .column(6, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);

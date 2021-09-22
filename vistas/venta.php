@@ -28,18 +28,14 @@ if ($_SESSION['ventas']==1) {
 </div>
 <div class="panel-body" style="height: 400px;" id="formularioregistros">
   <form action="" name="formulario" id="formulario" method="POST">
-    <div class="form-group col-lg-8 col-md-8 col-xs-12">
+    <div class="form-group  col-xs-12">
       <label for="">Cliente(*):</label>
       <input class="form-control" type="hidden" name="idventa" id="idventa">
       <select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true" required>
         
       </select>
     </div>
-      <div class="form-group col-lg-4 col-md-4 col-xs-12">
-      <label for="">Fecha(*): </label>
-      <input class="form-control" type="date" name="fecha_hora" id="fecha_hora" required>
-    </div>
-    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+    <div class="form-group col-xs-12">
       <label for="">Mesa(*): </label>
      <select name="mesa" id="mesa" class="form-control selectpicker" required>
        <option value="1">1</option>
@@ -52,6 +48,8 @@ if ($_SESSION['ventas']==1) {
        <option value="8">8</option>
        <option value="9">9</option>
        <option value="10">10</option>
+       <option value="11">Para llevar</option>
+       <option value="12">Domiciliario</option>
      </select>
     </div>
     <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -91,6 +89,45 @@ if ($_SESSION['ventas']==1) {
 <!--box-header-->
 <!--centro-->
 <div class="contenedor row">
+
+<div class="panel-body table-responsive subcontenedor col-md-6"  id="listadoregistros10">
+<table id="tbllistado10" class="table table-striped table-bordered table-condensed table-hover media-tabla">
+<h1 class="text-danger">Ventas para llevar</h1>
+    <thead>
+      <th>Opciones</th>
+      <th>Usuario</th>
+      <th>Total Venta</th>
+      <th>Estado</th>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <th>Opciones</th>
+      <th>Usuario</th>
+      <th class="text-danger"></th>
+      <th>Estado</th>
+    </tfoot>   
+  </table>   
+</div>
+<div class="panel-body table-responsive subcontenedor col-md-6"  id="listadoregistros11">
+<table id="tbllistado11" class="table table-striped table-bordered table-condensed table-hover media-tabla">
+<h1 class="text-danger">Domicilios</h1>
+    <thead>
+      <th>Opciones</th>
+      <th>Usuario</th>
+      <th>Total Venta</th>
+      <th>Estado</th>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <th>Opciones</th>
+      <th>Usuario</th>
+      <th class="text-danger"></th>
+      <th>Estado</th>
+    </tfoot>   
+  </table>   
+</div>
 <div class="panel-body table-responsive subcontenedor col-md-6"  id="listadoregistros">
 <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover media-tabla">
 <h1 class="text-danger">Mesa 1</h1>

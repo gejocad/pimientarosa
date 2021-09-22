@@ -13,6 +13,8 @@ function init(){
    listar7();
    listar8();
    listar9();
+   listar10();
+   listar11();
 
    $("#formulario").on("submit",function(e){
    	guardaryeditar(e);
@@ -45,6 +47,7 @@ function limpiar(){
 	var month=("0"+(now.getMonth()+1)).slice(-2);
 	var today=now.getFullYear()+"-"+(month)+"-"+(day);
 	$("#fecha_hora").val(today);
+	console.log(today)
 
 	//marcamos el primer tipo_documento
 	$("#tipo_comprobante").val("Ticket");
@@ -83,6 +86,9 @@ function cancelarform(){
 //funcion listar
 function listar(){
 	tabla=$('#tbllistado').DataTable({
+		"columnDefs": [
+            { "type": "numeric-comma", targets: 3 }
+        ],
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',
@@ -107,8 +113,8 @@ function listar(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -117,6 +123,7 @@ function listar(){
             $(this.api().column(2).footer()).html(total);
             
         }
+		
 	})
 
 }
@@ -148,8 +155,8 @@ function listar1(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -186,8 +193,8 @@ function listar2(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -224,8 +231,8 @@ function listar3(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -262,8 +269,8 @@ function listar4(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -300,8 +307,8 @@ function listar5(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -338,8 +345,8 @@ function listar6(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+               //.column(2)numero de columna a sumar
+			   .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -376,8 +383,8 @@ function listar7(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+               //.column(2)numero de columna a sumar
+			   .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -414,8 +421,8 @@ function listar8(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -452,8 +459,84 @@ function listar9(){
 		"footerCallback": function () {
         
             total = this.api()
-                .column(2)//numero de columna a sumar
-                //.column(1, {page: 'current'})//para sumar solo la pagina actual
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
+                .data()
+                .reduce(function (a, b) {
+                    return parseInt(a) + parseInt(b);
+                }, 0 );
+
+            $(this.api().column(2).footer()).html(total);
+            
+        }
+	})
+}
+function listar10(){
+	tabla=$('#tbllistado10').dataTable({
+		"aProcessing": true,//activamos el procedimiento del datatable
+		"aServerSide": true,//paginacion y filrado realizados por el server
+		dom: 'Bfrtip',//definimos los elementos del control de la tabla
+		buttons: [
+                  'copyHtml5',
+                  'excelHtml5',
+                  'csvHtml5',
+                  'pdf'
+		],
+		"ajax":
+		{
+			url:'../ajax/venta.php?op=listar10',
+			type: "get",
+			dataType : "json",
+			error:function(e){
+				console.log(e.responseText);
+			}
+		},
+		"bDestroy":true,
+		"iDisplayLength":5,//paginacion
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		"footerCallback": function () {
+        
+            total = this.api()
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
+                .data()
+                .reduce(function (a, b) {
+                    return parseInt(a) + parseInt(b);
+                }, 0 );
+
+            $(this.api().column(2).footer()).html(total);
+            
+        }
+	})
+}
+function listar11(){
+	tabla=$('#tbllistado11').dataTable({
+		"aProcessing": true,//activamos el procedimiento del datatable
+		"aServerSide": true,//paginacion y filrado realizados por el server
+		dom: 'Bfrtip',//definimos los elementos del control de la tabla
+		buttons: [
+                  'copyHtml5',
+                  'excelHtml5',
+                  'csvHtml5',
+                  'pdf'
+		],
+		"ajax":
+		{
+			url:'../ajax/venta.php?op=listar11',
+			type: "get",
+			dataType : "json",
+			error:function(e){
+				console.log(e.responseText);
+			}
+		},
+		"bDestroy":true,
+		"iDisplayLength":5,//paginacion
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		"footerCallback": function () {
+        
+            total = this.api()
+                //.column(2)numero de columna a sumar
+                .column(2, {page: 'current'})//para sumar solo la pagina actual
                 .data()
                 .reduce(function (a, b) {
                     return parseInt(a) + parseInt(b);
@@ -513,6 +596,8 @@ function guardaryeditar(e){
 			listar7();
 			listar8();
 			listar9();
+			listar10();
+			listar11();
      	}
      });
 

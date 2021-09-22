@@ -10,9 +10,9 @@ public function __construct(){
 }
 
 //metodo insertar registro
-public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$mesa,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
+public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$mesa,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
 	
-	$sql="INSERT INTO venta (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,fecha_hora,mesa,total_venta,estado) VALUES ('$idcliente','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$fecha_hora','$mesa','$total_venta','Aceptado')";
+	$sql="INSERT INTO venta (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,mesa,total_venta,estado) VALUES ('$idcliente','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$mesa','$total_venta','Aceptado')";
 	//return ejecutarConsulta($sql);
 	 $idventanew=ejecutarConsulta_retornarID($sql);
 	 $num_elementos=0;
@@ -92,6 +92,14 @@ public function listar8(){
 }
 public function listar9(){
 	$sql="SELECT v.idventa,DATE(v.fecha_hora) as fecha,v.idcliente,p.nombre as cliente,u.idusuario,u.nombre as usuario, v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.mesa,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE v.mesa = '10' ORDER BY v.idventa DESC";
+	return ejecutarConsulta($sql);
+}
+public function listar10(){
+	$sql="SELECT v.idventa,DATE(v.fecha_hora) as fecha,v.idcliente,p.nombre as cliente,u.idusuario,u.nombre as usuario, v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.mesa,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE v.mesa = '11' ORDER BY v.idventa DESC";
+	return ejecutarConsulta($sql);
+}
+public function listar11(){
+	$sql="SELECT v.idventa,DATE(v.fecha_hora) as fecha,v.idcliente,p.nombre as cliente,u.idusuario,u.nombre as usuario, v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.mesa,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE v.mesa = '12' ORDER BY v.idventa DESC";
 	return ejecutarConsulta($sql);
 }
 

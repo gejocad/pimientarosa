@@ -90,12 +90,6 @@ $reg=$rspta->fetch_object();
 				N° de Comprobante: P-0<?php echo $reg->idventa; ?>
 			</td>
 		</tr>
-		
-		<tr>
-			<td>
-				N° de Mesa: <?php echo $reg->mesa; ?>
-			</td>
-		</tr>
 	</table>
 	<br>
 	<br>

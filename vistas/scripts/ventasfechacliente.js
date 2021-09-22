@@ -12,7 +12,6 @@ function init(){
 function listar(){
 var  fecha_inicio = $("#fecha_inicio").val();
  var fecha_fin = $("#fecha_fin").val();
- var idcliente = $("#idcliente").val();
 
 	tabla=$('#tbllistado').DataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable

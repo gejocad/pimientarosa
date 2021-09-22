@@ -93,7 +93,7 @@ $reg=$rspta->fetch_object();
 		
 		<tr>
 			<td>
-				N° de Mesa: <?php echo $reg->mesa; ?>
+				*Venta domiciliaria*
 			</td>
 		</tr>
 	</table>
