@@ -3,6 +3,7 @@ var tabla;
 //funcion que se ejecuta al inicio
 function init(){
    mostrarform(false);
+   mostrarform2(false);
    listar();
    listar1();
    listar2();
@@ -18,13 +19,30 @@ function init(){
 
    $("#formulario").on("submit",function(e){
    	guardaryeditar(e);
-   });
+   })
+   $("#formulario2").on("submit",function(e){
+	guardaryeditar2(e);
+});  
+   ;
 
    //cargamos los items al select cliente
    $.post("../ajax/venta.php?op=selectCliente", function(r){
    	$("#idcliente").html(r);
    	$('#idcliente').selectpicker('refresh');
    });
+
+   $("#prueba").on({
+    "focus": function (event) {
+        $(event.target).select();
+    },
+    "keyup": function (event) {
+        $(event.target).val(function (index, value ) {
+            return value.replace(/\D/g, "")
+                        .replace(/([0-9])([0-9]{2})$/, '$1.$2')
+                        .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+        });
+    }
+});
 
 }
 
@@ -76,26 +94,39 @@ function mostrarform(flag){
 		$("#btnagregar").show();
 	}
 }
+function mostrarform2(flag){
+	limpiar();
+	if(flag){
+		$("#formularioclientes").show();
+		$("#btnGuardar2").prop("disabled",false);
+		$("#btnagregar2").hide();
+
+	}else{
+		
+		$("#formularioclientes").hide();
+		$("#btnagregar").show();
+	}
+}
 
 //cancelar form
 function cancelarform(){
 	limpiar();
 	mostrarform(false);
 }
+function cancelarform2(){
+	mostrarform2(false);
+}
 
 //funcion listar
 function listar(){
 	tabla=$('#tbllistado').DataTable({
-		"columnDefs": [
-            { "type": "numeric-comma", targets: 3 }
-        ],
+		
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -137,7 +168,6 @@ function listar1(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -175,7 +205,6 @@ function listar2(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -213,7 +242,6 @@ function listar3(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -251,7 +279,6 @@ function listar4(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -289,7 +316,6 @@ function listar5(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -327,7 +353,6 @@ function listar6(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -365,7 +390,6 @@ function listar7(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -403,7 +427,6 @@ function listar8(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -441,7 +464,6 @@ function listar9(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -479,7 +501,6 @@ function listar10(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -517,7 +538,6 @@ function listar11(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -602,6 +622,29 @@ function guardaryeditar(e){
      });
 
      limpiar();
+}
+
+function guardaryeditar2(e){
+	e.preventDefault();//no se activara la accion predeterminada 
+	 $("#btnGuardar2").prop("disabled",true);
+	var formData=new FormData($("#formulario2")[0]);
+
+	$.ajax({
+		url: "../ajax/persona.php?op=guardaryeditar",
+		type: "POST",
+		data: formData,
+		contentType: false,
+		processData: false,
+
+		success: function(datos){
+			bootbox.alert(datos);
+			mostrarform2(false);
+			tabla.ajax.reload();
+			
+		}
+	});
+
+	location.reload();
 }
 
 function mostrar(idventa){

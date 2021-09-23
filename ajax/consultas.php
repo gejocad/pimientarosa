@@ -20,7 +20,7 @@ switch ($_GET["op"]) {
             "2"=>$reg->proveedor,
             "3"=>$reg->tipo_comprobante,
             "4"=>$reg->idingreso,
-            "5"=>$reg->total_compra,
+            "5"=>number_format($reg->total_compra, 2, ',', ' '),
             "6"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Aceptado</span>':'<span class="label bg-red">Anulado</span>'
               );
 		}
@@ -46,7 +46,7 @@ switch ($_GET["op"]) {
             "2"=>$reg->cliente,
             "3"=>$reg->tipo_comprobante,
             "4"=>$reg->idventa,
-            "5"=>$reg->total_venta,
+            "5"=>number_format($reg->total_venta, 2, ',', ' '),
             "6"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Aceptado</span>':'<span class="label bg-red">Anulado</span>'
               );
         }

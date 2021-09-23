@@ -22,12 +22,51 @@ if ($_SESSION['ventas']==1) {
       <div class="box">
 <div class="box-header with-border">
   <h1 class="box-title">Ventas <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
-  <h1 class="box-title"> <a href="cliente.php"><button class="btn btn-success"><i class="fa fa-plus-circle"></i>Ir a clientes</button></a></h1>
   <div class="box-tools pull-right">
   </div>
 </div>
 <div class="panel-body" style="height: 400px;" id="formularioregistros">
-  <form action="" name="formulario" id="formulario" method="POST">
+  <h1><button class="btn btn-success" onclick="mostrarform2(true)"><i class="fa fa-plus-circle"></i>Agregar Cliente</button></h1>
+  <div  class="panel-body" style="height: 400px;" id="formularioclientes">
+  <form action="" name="formulario2" id="formulario2" method="POST">
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Nombre</label>
+      <input class="form-control" type="hidden" name="idpersona" id="idpersona">
+      <input class="form-control" type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
+      <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del cliente" required>
+    </div>
+     <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Tipo Dcumento</label>
+     <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
+       <option value="CEDULA">CEDULA</option>
+       <option value="DNI">NIT</option>
+       <option value="RUC">CEDULA DE EXTRANJERIA</option>
+     </select>
+    </div>
+     <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Número Documento</label>
+      <input class="form-control" type="text" name="num_documento" id="num_documento" maxlength="20" placeholder="Número de Documento">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Direccion</label>
+      <input class="form-control" type="text" name="direccion" id="direccion" maxlength="70" placeholder="Direccion">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Telefono</label>
+      <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" placeholder="Número de Telefono">
+    </div>
+        <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Email</label>
+      <input class="form-control" type="email" name="email" id="email" maxlength="50" placeholder="Email">
+    </div>
+    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <button class="btn btn-primary" type="submit" id="btnGuardar2"><i class="fa fa-save"></i>  Guardar</button>
+
+      <button class="btn btn-danger" onclick="cancelarform2()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+    </div>
+  </form>
+  </div>  
+<form action="" name="formulario" id="formulario" method="POST">
     <div class="form-group  col-xs-12">
       <label for="">Cliente(*):</label>
       <input class="form-control" type="hidden" name="idventa" id="idventa">
@@ -57,6 +96,7 @@ if ($_SESSION['ventas']==1) {
        <button id="btnAgregarArt" type="button" class="btn btn-primary"><span class="fa fa-plus"></span>Agregar Articulos</button>
      </a>
     </div>
+
 <div class="form-group col-lg-12 col-md-12 col-xs-12">
      <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
        <thead style="background-color:#A9D0F5">
@@ -71,7 +111,7 @@ if ($_SESSION['ventas']==1) {
          <th>TOTAL</th>
          <th></th>
          <th></th>
-         <th></th>
+         <th ></th>
          <th></th>
          <th><h4 id="total">$ 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
        </tfoot>
@@ -85,6 +125,7 @@ if ($_SESSION['ventas']==1) {
       <button class="btn btn-danger" onclick="cancelarform()" type="button" id="btnCancelar"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
     </div>
   </form>
+</div>
 </div>
 <!--box-header-->
 <!--centro-->
@@ -218,7 +259,7 @@ if ($_SESSION['ventas']==1) {
     <tfoot>
       <th>Opciones</th>
       <th>Usuario</th>
-      <th class="text-danger"></th>
+      <th class="text-danger" id="prueba"></th>
       <th>Estado</th>
     </tfoot>   
   </table>

@@ -67,15 +67,6 @@ if ($_SESSION['compras']==1) {
       <label for="">Fecha(*): </label>
       <input class="form-control" type="date" name="fecha_hora" id="fecha_hora" required>
     </div>
-  
-     <div class="form-group col-lg-2 col-md-2 col-xs-6">
-      <label for="">Serie: </label>
-      <input class="form-control" type="text" name="serie" id="serie" maxlength="17" placeholder="Serie">
-    </div>
-     <div class="form-group col-lg-2 col-md-2 col-xs-6">
-      <label for="">Numero: </label>
-      <input class="form-control" type="text" name="num_comprobante" id="num_comprobante" maxlength="10" placeholder="Número" >
-    </div>
     <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
      <a data-toggle="modal" href="#myModal">
        <button id="btnAgregarArt" type="button" class="btn btn-primary"><span class="fa fa-plus"></span>Agregar Articulos</button>

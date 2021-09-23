@@ -82,7 +82,7 @@ $reg=$rspta->fetch_object();
 		</tr>
 		<tr>
 			<td>
-				<?php echo $reg->tipo_documento.": ".$reg->num_documento; ?>
+				<?php echo $reg->tipo_documento.": ".number_format($reg->num_documento); ?>
 			</td>
 		</tr>
 		<tr>
@@ -118,7 +118,7 @@ $reg=$rspta->fetch_object();
 		 	echo "<tr>";
 		 	echo "<td>".$regd->cantidad."</td>";
 		 	echo "<td>".$regd->articulo."</td>";
-		 	echo "<td align='right'>$ ".$regd->subtotal."</td>";
+		 	echo "<td align='right'>$ ".number_format($regd->subtotal, 2, ',', ' ')."</td>";
 		 	echo "</tr>";
 		 	$cantidad+=$regd->cantidad;
 		 } 
@@ -128,7 +128,7 @@ $reg=$rspta->fetch_object();
 		<tr>
 			<td>&nbsp;</td>
 			<td align="right"><b>TOTAL:</b></td>
-			<td align="right"><b>$ <?php echo $reg->total_venta; ?></b></td>
+			<td align="right"><b>$ <?php echo number_format($reg->total_venta, 2, ',', ' '); ?></b></td>
 		</tr>
 
 		<tr>
