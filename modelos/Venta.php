@@ -27,10 +27,20 @@ public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comproba
 	 return $sw;
 }
 
-public function editar($idventa,$idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$mesa,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
-	$sql="UPDATE venta SET idventa='$idventa',idcliente='$idcliente', idusuario='$idusuario',tipo_comprobante='$tipo_comprobante',num_comprobante='$num_comprobante',fecha_hora='$fecha_hora',mesa='$mesa',total_venta='$total_venta',idarticulo='$idarticulo',cantidad='$cantidad',precio_venta='$precio_venta',descuento='$descuento' 
-	WHERE $idventa='$idventa'";
-	return ejecutarConsulta($sql);
+public function editar($idventa,$idcliente,$idusuario,$mesa,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
+	$sql="UPDATE venta SET idcliente='$idcliente', idusuario='$idusuario',mesa='$mesa',total_venta=total_venta+'$total_venta' 
+	WHERE idventa='$idventa'";
+	 $idventanew=ejecutarConsulta_retornarID($sql);
+	 $num_elementos=0;
+	 $sw=true;
+	 while ($num_elementos < count($idarticulo)) {
+		 
+		$sql_detalle="INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) VALUES('$idventa','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]')";
+		ejecutarConsulta($sql_detalle) or $sw=false;
+
+	 	$num_elementos=$num_elementos+1;
+	 }
+	 return $sw;
 }
 
 
@@ -43,7 +53,7 @@ public function anular($idventa){
 
 //implementar un metodopara mostrar los datos de unregistro a modificar
 public function mostrar($idventa){
-	$sql="SELECT v.idventa,DATE(v.fecha_hora) as fecha,v.idcliente,p.nombre as cliente,u.idusuario,u.nombre as usuario, v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.mesa,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE idventa='$idventa'";
+	$sql="SELECT v.idventa,v.idcliente,p.nombre as cliente,u.idusuario,v.total_venta,v.mesa,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE idventa='$idventa'";
 	return ejecutarConsultaSimpleFila($sql);
 }
 

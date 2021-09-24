@@ -72,7 +72,7 @@ if ($_SESSION['escritorio']==1) {
   <div class="small-box bg-aqua">
     <div class="inner">
       <h4 style="font-size: 17px;">
-        <strong>$ <?php echo $totalc; ?> </strong>
+        <strong>$ <?php echo number_format($totalc, 2, ',', '.'); ?> </strong>
       </h4>
       <p>Compras</p>
     </div>
@@ -86,7 +86,7 @@ if ($_SESSION['escritorio']==1) {
   <div class="small-box bg-green">
     <div class="inner">
       <h4 style="font-size: 17px;">
-        <strong>$ <?php echo $totalv; ?> </strong>
+        <strong>$ <?php echo number_format($totalv, 2, ',', '.'); ?> </strong>
       </h4>
       <p>Ventas</p>
     </div>

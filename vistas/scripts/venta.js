@@ -48,7 +48,7 @@ function init(){
 
 //funcion limpiar
 function limpiar(){
-
+	$("#idventa").val("");
 	$("#idcliente").val("");
 	$("#cliente").val("");
 	$("#serie_comprobante").val("");
@@ -620,8 +620,8 @@ function guardaryeditar(e){
 			listar11();
      	}
      });
-
-     limpiar();
+	 limpiar();
+     setTimeout(function(){ location.reload(); }, 2000);
 }
 
 function guardaryeditar2(e){
@@ -643,8 +643,9 @@ function guardaryeditar2(e){
 			
 		}
 	});
-
-	location.reload();
+	limpiar();
+	setTimeout(function(){ location.reload(); }, 2000);
+	
 }
 
 function mostrar(idventa){
@@ -656,13 +657,6 @@ function mostrar(idventa){
 
 			$("#idcliente").val(data.idcliente);
 			$("#idcliente").selectpicker('refresh');
-			$("#tipo_comprobante").val(data.tipo_comprobante);
-			$("#tipo_comprobante").selectpicker('refresh');
-			$("#iddetalle_articulo").val(data.iddetalle_articulo);
-			$("#iddetalle_articulo").selectpicker('refresh');
-			$("#serie_comprobante").val(data.serie_comprobante);
-			$("#num_comprobante").val(data.num_comprobante);
-			$("#fecha_hora").val(data.fecha);
 			$("#mesa").val(data.mesa);
 			$("#idventa").val(data.idventa);
 			
@@ -671,9 +665,6 @@ function mostrar(idventa){
 			$("#btnCancelar").show();
 			$("#btnAgregarArt").show();
 		});
-	$.post("../ajax/venta.php?op=listarDetalle&id="+idventa,function(r){
-		$("#detalles").html(r);
-	});
 
 }
 
