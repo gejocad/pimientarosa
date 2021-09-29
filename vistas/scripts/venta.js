@@ -569,7 +569,7 @@ function listar11(){
 }
 
 function listarArticulos(){
-	tabla=$('#tblarticulos').dataTable({
+	tabla=$('#tblarticulos').DataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
@@ -587,8 +587,20 @@ function listarArticulos(){
 		},
 		"bDestroy":true,
 		"iDisplayLength":5,//paginacion
-		"order":[[0,"desc"]]//ordenar (columna, orden)
-	}).DataTable();
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		"createdRow": function( row, data, dataIndex){
+			if( data[4] <= 5  ){
+				$(row).css('background-color', '#ff3333');
+			}
+			else if( data[4] >= 5 && data[4] <=30 ){
+				$(row).css('background-color', '#A497E5');
+			}
+			else{
+				$(row).css('background-color', '#9EF395');
+			}
+
+		}
+	});
 }
 //funcion para guardaryeditar
 function guardaryeditar(e){
