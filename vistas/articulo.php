@@ -85,6 +85,48 @@ if ($_SESSION['almacen']==1) {
         <svg id="barcode"></svg>
       </div>
     </div>
+    <div class="form-row">
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing1" id="ing1" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant1" id="cant1">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing2" id="ing2" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant2" id="cant2">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing3" id="ing3" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant3" id="cant3">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing4" id="ing4" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant4" id="cant4">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing5" id="ing5" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant5" id="cant5">
+    </div>
+    </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
 

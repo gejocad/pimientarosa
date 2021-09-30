@@ -121,9 +121,7 @@ switch ($_GET["op"]) {
             "1"=>$reg->nombre,
             "2"=>$reg->categoria,
             "3"=>$reg->codigo,
-            "4"=>$reg->stock,
-			"5"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>"
-          
+            "4"=>$reg->stock
               );
 		}
 		$results=array(

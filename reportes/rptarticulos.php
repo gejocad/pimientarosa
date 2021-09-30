@@ -40,8 +40,8 @@ $pdf->Cell(35,6,utf8_decode('Descripcion'),1,0,'C',1);
 $pdf->Ln(10);
 
 //creamos las filas de los registros según la consulta mysql
-require_once "../modelos/Articulo.php";
-$articulo = new Articulo();
+require_once "../modelos/Ingrediente.php";
+$articulo = new Ingrediente();
 
 $rspta = $articulo->listar();
 

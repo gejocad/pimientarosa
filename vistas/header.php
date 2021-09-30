@@ -111,6 +111,7 @@ if ($_SESSION['almacen']==1) {
             </span>
           </a>
           <ul class="treeview-menu">
+          <li><a href="ingrediente.php"><i class="fa fa-circle-o"></i> Ingredientes</a></li>
             <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Articulos</a></li>
             <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorias</a></li>
           </ul>

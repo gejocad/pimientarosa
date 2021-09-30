@@ -8,6 +8,16 @@ $idcategoria=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):
 $codigo=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $stock=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
+$ing1=isset($_POST["ing1"])? limpiarCadena($_POST["ing1"]):"";
+$cant1=isset($_POST["cant1"])? limpiarCadena($_POST["cant1"]):"";
+$ing2=isset($_POST["ing2"])? limpiarCadena($_POST["ing2"]):"";
+$cant2=isset($_POST["cant2"])? limpiarCadena($_POST["cant2"]):"";
+$ing3=isset($_POST["ing3"])? limpiarCadena($_POST["ing3"]):"";
+$cant3=isset($_POST["cant3"])? limpiarCadena($_POST["cant3"]):"";
+$ing4=isset($_POST["ing4"])? limpiarCadena($_POST["ing4"]):"";
+$cant4=isset($_POST["cant4"])? limpiarCadena($_POST["cant4"]):"";
+$ing5=isset($_POST["ing5"])? limpiarCadena($_POST["ing5"]):"";
+$cant5=isset($_POST["cant5"])? limpiarCadena($_POST["cant5"]):"";
 $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
 
@@ -24,10 +34,10 @@ switch ($_GET["op"]) {
 		}
 	}
 	if (empty($idarticulo)) {
-		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
+		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$descripcion,$imagen);
 		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
 	}else{
-         $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
+         $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$descripcion,$imagen);
 		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
 	}
 		break;
