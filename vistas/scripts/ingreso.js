@@ -202,7 +202,7 @@ $("#btnGuardar").hide();
 
 
 
-function agregarDetalle(idarticulo,articulo){
+function agregarDetalle(idarticulo,nombre, ing1, cant1, ing2, cant2, ing3, cant3, ing4, cant4, ing5, cant5){
 	var cantidad=1;
 	var precio_compra=1;
 	var precio_venta=1;
@@ -211,8 +211,18 @@ function agregarDetalle(idarticulo,articulo){
 		var subtotal=cantidad*precio_compra;
 		var fila='<tr class="filas" id="fila'+cont+'">'+
         '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
-        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
-        '<td><input type="number" name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
+        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+nombre+'</td>'+
+        '<td><input type="hidden"   name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
+        '<td><input type="hidden"   name="ing1[]" id="ing1[]" value="'+ing1+'"></td>'+
+        '<td><input type="hidden"   name="cant1[]" id="cant1[]" value="'+cant1+'"></td>'+
+        '<td><input type="hidden"   name="ing2[]" id="ing2[]" value="'+ing2+'"></td>'+
+        '<td><input type="hidden"   name="cant2[]" id="cant2[]" value="'+cant2+'"></td>'+
+        '<td><input type="hidden"   name="ing3[]" id="ing3[]" value="'+ing3+'"></td>'+
+        '<td><input type="hidden"   name="cant3[]" id="cant3[]" value="'+cant3+'"></td>'+
+        '<td><input type="hidden"   name="ing4[]" id="ing4[]" value="'+ing4+'"></td>'+
+        '<td><input type="hidden"   name="cant4[]" id="cant4[]" value="'+cant4+'"></td>'+
+        '<td><input type="hidden"   name="ing5[]" id="ing5[]" value="'+ing5+'"></td>'+
+        '<td><input type="hidden"   name="cant5[]" id="cant5[]" value="'+cant5+'"></td>'+
         '<td><input type="number" name="precio_compra[]" id="precio_compra[]" value="'+precio_compra+'"></td>'+
         '<td><input type="number" name="precio_venta[]" value="'+precio_venta+'"></td>'+
         '<td><span id="subtotal'+cont+'" name="subtotal">'+subtotal+'</span></td>'+

@@ -58,7 +58,7 @@ switch ($_GET["op"]) {
 		echo json_encode($results);
 		break;
 
-		case 'selectIngrediente1':
+		case 'select':
 			require_once "../modelos/Ingrediente.php";
 			$ingrediente=new Ingrediente();
 

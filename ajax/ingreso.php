@@ -18,7 +18,7 @@ $total_compra=isset($_POST["total_compra"])? limpiarCadena($_POST["total_compra"
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
 	if (empty($idingreso)) {
-		$rspta=$ingreso->insertar($idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$total_compra,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_compra"],$_POST["precio_venta"]);
+		$rspta=$ingreso->insertar($idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$total_compra,$_POST["idarticulo"],$_POST["cantidad"],$_POST["ing1"],$_POST["cant1"],$_POST["ing2"],$_POST["cant2"],$_POST["ing3"],$_POST["cant3"],$_POST["ing4"],$_POST["cant4"],$_POST["ing5"],$_POST["cant5"],$_POST["precio_compra"],$_POST["precio_venta"]);
 		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
 	}else{
         $rspta=$ingreso->editar($idingreso,$idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$total_compra);
@@ -117,11 +117,18 @@ switch ($_GET["op"]) {
 
 		while ($reg=$rspta->fetch_object()) {
 			$data[]=array(
-            "0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idarticulo.',\''.$reg->nombre.'\')"><span class="fa fa-plus"></span></button>',
+            "0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idarticulo.',\''.$reg->nombre.'\',\''.$reg->ing1.'\',\''.$reg->cant1.'\',\''.$reg->ing2.'\',\''.$reg->cant2.'\',\''.$reg->ing3.'\',\''.$reg->cant3.'\',\''.$reg->ing4.'\',\''.$reg->cant4.'\',\''.$reg->ing5.'\',\''.$reg->cant5.'\')"><span class="fa fa-plus"></span></button>',
             "1"=>$reg->nombre,
             "2"=>$reg->categoria,
             "3"=>$reg->codigo,
-            "4"=>$reg->stock
+			"4"=>$reg->stock,
+			"5"=>$reg->cant1,
+			"6"=>$reg->cant2,
+			"7"=>$reg->cant3,
+			"8"=>$reg->cant4,
+			"9"=>$reg->cant5,
+            "10"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>"
+          
               );
 		}
 		$results=array(

@@ -34,10 +34,10 @@ switch ($_GET["op"]) {
 		}
 	}
 	if (empty($idarticulo)) {
-		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$descripcion,$imagen);
+		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$ing1,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$cant5,$descripcion,$imagen);
 		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
 	}else{
-         $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$descripcion,$imagen);
+         $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$ing1,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$cant5,$descripcion,$imagen);
 		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
 	}
 		break;

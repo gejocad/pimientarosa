@@ -73,19 +73,39 @@ if ($_SESSION['compras']==1) {
      </a>
     </div>
 <div class="form-group col-lg-12 col-md-12 col-xs-12">
-     <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
+<table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
        <thead style="background-color:#A9D0F5">
         <th>Opciones</th>
         <th>Articulo</th>
         <th>Cantidad</th>
-        <th>Precio Compra</th>
-        <th>Precio Venta</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Precio compra</th>
+        <th>Precio venta</th>
         <th>Subtotal</th>
        </thead>
        <tfoot>
          <th>TOTAL</th>
          <th></th>
          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>  
          <th></th>
          <th></th>
          <th><h4 id="total">$ 0.00</h4><input type="hidden" name="total_compra" id="total_compra"></th>
@@ -127,6 +147,11 @@ if ($_SESSION['compras']==1) {
       <th>Categoria</th>
       <th>Codigo</th>
       <th>stock</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th>Imagen</th>
     </thead>
     <tbody>
@@ -137,6 +162,11 @@ if ($_SESSION['compras']==1) {
       <th>Categoria</th>
       <th>Codigo</th>
       <th>stock</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th>Imagen</th>
     </tfoot>   
   </table>

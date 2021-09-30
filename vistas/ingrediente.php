@@ -54,10 +54,6 @@ if ($_SESSION['almacen']==1) {
       <input class="form-control" type="hidden" name="idingrediente" id="idingrediente">
       <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
     </div>
-    <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Categoria(*):</label>
-      <select name="idcategoria" id="idcategoria" class="form-control selectpicker" data-Live-search="true" required></select>
-    </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">stock</label>
       <input class="form-control" type="number" name="stock" id="stock"  required>
@@ -74,6 +70,11 @@ if ($_SESSION['almacen']==1) {
       <div id="print">
         <svg id="barcode"></svg>
       </div>
+    </div>
+    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
+
+      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
     </div>
   </form>
 </div>

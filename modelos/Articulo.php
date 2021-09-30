@@ -12,7 +12,7 @@ public function __construct(){
 //metodo insertar regiustro
 public function insertar($idcategoria,$codigo,$nombre,$stock,$ing1,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$cant5,$descripcion,$imagen){
 	$sql="INSERT INTO articulo (idcategoria,codigo,nombre,stock,ing1,cant1,ing2,cant2,ing3,cant3,ing4,cant4,ing5,cant5,descripcion,imagen,condicion)
-	 VALUES ('$idcategoria','$codigo','$nombre','$stock','$descripcion','$imagen','1')";
+	 VALUES ('$idcategoria','$codigo','$nombre','$stock','$ing1','$cant1','$ing2','$cant2','$ing3','$cant3','$ing4','$cant4','$ing5','$cant5','$descripcion','$imagen','1')";
 	return ejecutarConsulta($sql);
 }
 
@@ -50,13 +50,13 @@ public function listar(){
 
 //listar registros activos
 public function listarActivos(){
-	$sql="SELECT a.idarticulo,a.idcategoria,a.nombre as nombre,a.idcategoria,c.nombre as categoria,a.codigo,a.stock,a.descripcion,a.imagen,a.condicion FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria WHERE a.condicion='1'";
+	$sql="SELECT a.idarticulo,a.idcategoria,a.nombre as nombre,a.idcategoria,c.nombre as categoria,a.codigo,a.stock,a.ing1,a.cant1,a.ing2,a.cant2,a.ing3,a.cant3,a.ing4,a.cant4,a.ing5,a.cant5,a.descripcion,a.imagen,a.condicion FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria WHERE a.condicion='1'";
 	return ejecutarConsulta($sql);
 }
 
 //implementar un metodo para listar los activos, su ultimo precio y el stock(vamos a unir con el ultimo registro de la tabla detalle_ingreso)
 public function listarActivosVenta(){
-	$sql="SELECT a.idarticulo,a.idcategoria,a.nombre as nombre,a.idcategoria,c.nombre as categoria,a.codigo,a.stock,a.ing1,a.cant1,a.ing2,a.cant2,a.ing3,a.cant3,a.ing4,a.cant4,a.ing5,a.cant5,a.descripcion,a.imagen,a.condicion,(SELECT precio_venta FROM detalle_ingreso WHERE idarticulo=a.idarticulo ORDER BY iddetalle_ingreso DESC LIMIT 0,1) AS precio_venta FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria WHERE a.condicion='1' AND a.stock>'0'";
+	$sql="SELECT a.idarticulo,a.idcategoria,a.nombre as nombre,a.idcategoria,c.nombre as categoria,a.codigo,a.stock,a.ing1,a.cant1,a.ing2,a.cant2,a.ing3,a.cant3,a.ing4,a.cant4,a.ing5,a.cant5,a.descripcion,a.imagen,a.condicion,(SELECT precio_venta FROM detalle_ingreso WHERE idarticulo=a.idarticulo ORDER BY iddetalle_ingreso DESC LIMIT 0,1) AS precio_venta FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria WHERE a.condicion='1'";
 	return ejecutarConsulta($sql);
 }
 

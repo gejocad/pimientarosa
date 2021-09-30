@@ -10,6 +10,7 @@ function init(){
    })
 
 
+}
 
 //funcion limpiar
 function limpiar(){

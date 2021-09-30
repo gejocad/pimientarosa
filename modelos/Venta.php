@@ -10,7 +10,7 @@ public function __construct(){
 }
 
 //metodo insertar registro
-public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$mesa,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
+public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$mesa,$total_venta,$idarticulo,$cantidad,$ing1,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$cant5,$precio_venta,$descuento){
 	
 	$sql="INSERT INTO venta (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,mesa,total_venta,estado) VALUES ('$idcliente','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$mesa','$total_venta','Aceptado')";
 	//return ejecutarConsulta($sql);
@@ -19,7 +19,7 @@ public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comproba
 	 $sw=true;
 	 while ($num_elementos < count($idarticulo)) {
 		 
-		$sql_detalle="INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) VALUES('$idventanew','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]')";
+		$sql_detalle="INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento,ing1,cant1,ing2,cant2,ing3,cant3,ing4,cant4,ing5,cant5) VALUES('$idventanew','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]','$ing1[$num_elementos]','$cant1[$num_elementos]','$ing2[$num_elementos]','$cant2[$num_elementos]','$ing3[$num_elementos]','$cant3[$num_elementos]','$ing4[$num_elementos]','$cant4[$num_elementos]','$ing5[$num_elementos]','$cant5[$num_elementos]')";
 		ejecutarConsulta($sql_detalle) or $sw=false;
 
 	 	$num_elementos=$num_elementos+1;

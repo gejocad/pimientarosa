@@ -75,6 +75,7 @@ if ($_SESSION['almacen']==1) {
       <input class="form-control" type="file" name="imagen" id="imagen">
       <input type="hidden" name="imagenactual" id="imagenactual">
       <img src="" alt="" width="150px" height="120" id="imagenmuestra">
+      <h1 class="text-right" for="">Ingredientes:</h1>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Codigo:</label>
@@ -83,16 +84,17 @@ if ($_SESSION['almacen']==1) {
       <button class="btn btn-info" type="button" onclick="imprimir()">Imprimir</button>
       <div id="print">
         <svg id="barcode"></svg>
-      </div>
+</br>
+
     </div>
     <div class="form-row">
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Ingrediente:</label>
+      <label class=""   for="">Ingrediente:</label>
       <select name="ing1" id="ing1" class="form-control selectpicker" data-Live-search="true"></select>
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Porciones</label>
-      <input class="form-control" type="number" name="cant1" id="cant1">
+      <input class="form-control" type="number" name="cant1" id="cant1" placeholder="0">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Ingrediente:</label>
@@ -100,7 +102,7 @@ if ($_SESSION['almacen']==1) {
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Porciones</label>
-      <input class="form-control" type="number" name="cant2" id="cant2">
+      <input class="form-control" type="number" name="cant2" id="cant2" placeholder="0">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Ingrediente:</label>
@@ -108,7 +110,7 @@ if ($_SESSION['almacen']==1) {
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Porciones</label>
-      <input class="form-control" type="number" name="cant3" id="cant3">
+      <input class="form-control" type="number" name="cant3" id="cant3" placeholder="0">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Ingrediente:</label>
@@ -116,7 +118,7 @@ if ($_SESSION['almacen']==1) {
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Porciones</label>
-      <input class="form-control" type="number" name="cant4" id="cant4">
+      <input class="form-control" type="number" name="cant4" id="cant4" placeholder="0">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Ingrediente:</label>
@@ -124,7 +126,7 @@ if ($_SESSION['almacen']==1) {
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Porciones</label>
-      <input class="form-control" type="number" name="cant5" id="cant5">
+      <input class="form-control" type="number" name="cant5" id="cant5" placeholder="0">
     </div>
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

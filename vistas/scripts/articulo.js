@@ -9,6 +9,48 @@ function init(){
    	guardaryeditar(e);
    })
 
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing1").html(r);
+	$("#ing1").selectpicker('refresh');
+});
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing2").html(r);
+	$("#ing2").selectpicker('refresh');
+});
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing3").html(r);
+	$("#ing3").selectpicker('refresh');
+});
+ 
+
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing4").html(r);
+	$("#ing4").selectpicker('refresh');
+});
+ 
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing5").html(r);
+	$("#ing5").selectpicker('refresh');
+});
+ 
+
+
+ 
+
+ 
+
+
+
    //cargamos los items al celect categoria
    $.post("../ajax/articulo.php?op=selectCategoria", function(r){
    	$("#idcategoria").html(r);
@@ -116,6 +158,21 @@ function mostrar(idarticulo){
 			$("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
 			$("#imagenactual").val(data.imagen);
 			$("#idarticulo").val(data.idarticulo);
+			$("#ing1").val(data.ing1);
+			$("#ing1").selectpicker('refresh');
+			$("#cant1").val(data.cant1);
+			$("#ing2").val(data.ing2);
+			$("#ing2").selectpicker('refresh');
+			$("#cant2").val(data.cant2);
+			$("#ing3").val(data.ing3);
+			$("#ing3").selectpicker('refresh');
+			$("#cant3").val(data.cant3);
+			$("#ing4").val(data.ing4);
+			$("#ing4").selectpicker('refresh');
+			$("#cant4").val(data.cant4);
+			$("#ing5").val(data.ing5);
+			$("#ing5").selectpicker('refresh');
+			$("#cant5").val(data.cant5);
 			generarbarcode();
 		})
 }

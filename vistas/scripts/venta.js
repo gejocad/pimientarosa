@@ -702,7 +702,7 @@ $("#btnGuardar").hide();
 
 
 
-function agregarDetalle(idarticulo,articulo,precio_venta, cant1, cant2, cant3, cant4, cant5){
+function agregarDetalle(idarticulo,nombre, ing1, cant1, ing2, cant2, ing3, cant3, ing4, cant4, ing5, cant5,precio_venta){
 	var cantidad=1;
 	var descuento=0;
 
@@ -710,15 +710,20 @@ function agregarDetalle(idarticulo,articulo,precio_venta, cant1, cant2, cant3, c
 		var subtotal=cantidad*precio_venta;
 		var fila='<tr class="filas" id="fila'+cont+'">'+
         '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
-        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
-        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
-        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cant1+'"></td>'+
-        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cant2+'"></td>'+
-        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cant3+'"></td>'+
-        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cant4+'"></td>'+
-        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cant5+'"></td>'+
-        '<td><input type="number" disabled="disabled"  name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
-        '<td><input type="number" disabled="disabled" name="descuento[]" value="'+descuento+'"></td>'+
+        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+nombre+'</td>'+
+        '<td><input type="hidden"   name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
+        '<td><input type="hidden"   name="ing1[]" id="ing1[]" value="'+ing1+'"></td>'+
+        '<td><input type="hidden"   name="cant1[]" id="cant1[]" value="'+cant1+'"></td>'+
+        '<td><input type="hidden"   name="ing2[]" id="ing2[]" value="'+ing2+'"></td>'+
+        '<td><input type="hidden"   name="cant2[]" id="cant2[]" value="'+cant2+'"></td>'+
+        '<td><input type="hidden"   name="ing3[]" id="ing3[]" value="'+ing3+'"></td>'+
+        '<td><input type="hidden"   name="cant3[]" id="cant3[]" value="'+cant3+'"></td>'+
+        '<td><input type="hidden"   name="ing4[]" id="ing4[]" value="'+ing4+'"></td>'+
+        '<td><input type="hidden"   name="cant4[]" id="cant4[]" value="'+cant4+'"></td>'+
+        '<td><input type="hidden"   name="ing5[]" id="ing5[]" value="'+ing5+'"></td>'+
+        '<td><input type="hidden"   name="cant5[]" id="cant5[]" value="'+cant5+'"></td>'+
+        '<td><input type="number" readonly  name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
+        '<td><input type="number" readonly  name="descuento[]" value="'+descuento+'"></td>'+
         '<td><span id="subtotal'+cont+'" name="subtotal">'+subtotal+'</span></td>'+
         '<td><button type="button" onclick="modificarSubtotales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>'+
 		'</tr>';

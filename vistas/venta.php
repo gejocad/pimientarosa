@@ -108,6 +108,11 @@ if ($_SESSION['ventas']==1) {
         <th></th>
         <th></th>
         <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
         <th>Precio Venta</th>
         <th>Descuento</th>
         <th>Subtotal</th>
@@ -120,7 +125,12 @@ if ($_SESSION['ventas']==1) {
           <th></th>
           <th></th>
           <th></th>
-          <th></th> 
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>  
          <th></th>
          <th></th>
          <th><h4 id="total">$ 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
@@ -397,6 +407,11 @@ if ($_SESSION['ventas']==1) {
               <th>Categoria</th>
               <th>Código</th>
               <th>stock</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
               <th>Precio Venta</th>
               <th>Imagen</th>
             </thead>
@@ -409,6 +424,11 @@ if ($_SESSION['ventas']==1) {
               <th>Categoria</th>
               <th>Código</th>
               <th>stock</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
               <th>Precio Venta</th>
               <th>Imagen</th>
             </tfoot>
