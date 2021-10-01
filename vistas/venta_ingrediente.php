@@ -21,7 +21,7 @@ if ($_SESSION['ventas']==1) {
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Ventas </h1>
+  <h1 class="box-title">Registro de productos </h1>
   <div class="box-tools pull-right">
     
   </div>
@@ -44,6 +44,10 @@ if ($_SESSION['ventas']==1) {
       <th>cantidad4</th>
       <th>ingrediente5</th>
       <th>cantidad5</th>
+      <th>ingrediente6</th>
+      <th>cantidad6</th>
+      <th>ingrediente7</th>
+      <th>cantidad7</th>
       <th>Total</th>
     </thead>
     <tbody>
@@ -62,6 +66,10 @@ if ($_SESSION['ventas']==1) {
       <th>cantidad4</th>
       <th>ingrediente5</th>
       <th>cantidad5</th>
+      <th>ingrediente6</th>
+      <th>cantidad6</th>
+      <th>ingrediente7</th>
+      <th>cantidad7</th>
       <th>Total</th>
     </tfoot>   
   </table>

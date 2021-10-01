@@ -46,7 +46,7 @@ public function listarDetalle($idventa){
 
 //listar registros
 public function listar(){
-	$sql="SELECT dv.idventa,dv.idarticulo,a.nombre,dv.cantidad,dv.precio_venta, dv.ing1, dv.cant1, dv.ing2, dv.cant2, dv.ing3, dv.cant3, dv.ing4, dv.cant4, dv.ing5, dv.cant5, dv.precio_venta FROM detalle_venta dv INNER JOIN articulo a ON dv.idarticulo=a.idarticulo ORDER BY dv.idventa DESC";
+	$sql="SELECT dv.idventa,dv.idarticulo,a.nombre,dv.cantidad,dv.precio_venta, dv.ing1, dv.cant1, dv.ing2, dv.cant2, dv.ing3, dv.cant3, dv.ing4, dv.cant4, dv.ing5, dv.cant5, dv.ing6, dv.cant6, dv.ing7, dv.cant7, dv.precio_venta FROM detalle_venta dv INNER JOIN articulo a ON dv.idarticulo=a.idarticulo ORDER BY dv.idventa DESC";
 	return ejecutarConsulta($sql);
 }
 

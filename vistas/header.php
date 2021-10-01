@@ -148,7 +148,7 @@ if ($_SESSION['ventas']==1) {
           <ul class="treeview-menu">
             <li><a href="venta.php"><i class="fa fa-circle-o"></i> Ventas</a></li>
             <li><a href="cliente.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
-            <li><a href="venta_ingrediente.php"><i class="fa fa-circle-o"></i> Control de ingredientes</a></li>
+            <li><a href="venta_ingrediente.php"><i class="fa fa-circle-o"></i> Control de productos</a></li>
           </ul>
         </li>';
 }

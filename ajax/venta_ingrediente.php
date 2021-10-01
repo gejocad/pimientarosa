@@ -93,7 +93,11 @@ switch ($_GET["op"]) {
 					"10"=>$reg->cant4,
 					"11"=>$reg->ing5,
 					"12"=>$reg->cant5,
-					"13"=>$reg->precio_venta
+					"13"=>$reg->ing6,
+					"14"=>$reg->cant6,
+					"15"=>$reg->ing7,
+					"16"=>$reg->cant7,
+					"17"=>$reg->precio_venta
 				  );
 			}
 			$results=array(
