@@ -84,7 +84,7 @@ switch ($_GET["op"]) {
             "2"=>$reg->proveedor,
             "3"=>$reg->usuario,
             "4"=>$reg->idingreso_ingrediente,
-            "5"=>$reg->total_compra,
+            "5"=>number_format($reg->total_compra, 0, ',', '.'),
             "6"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Aceptado</span>':'<span class="label bg-red">Anulado</span>'
               );
 		}
