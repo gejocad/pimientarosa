@@ -702,7 +702,7 @@ $("#btnGuardar").hide();
 
 
 
-function agregarDetalle(idarticulo,nombre, ing1, cant1, ing2, cant2, ing3, cant3, ing4, cant4, ing5, cant5,precio_venta){
+function agregarDetalle(idarticulo,nombre, ing1, cant1, ing2, cant2, ing3, cant3, ing4, cant4, ing5, cant5,ing6, cant6, ing7, cant7, precio_venta){
 	var cantidad=1;
 	var descuento=0;
 
@@ -722,6 +722,10 @@ function agregarDetalle(idarticulo,nombre, ing1, cant1, ing2, cant2, ing3, cant3
         '<td><input type="hidden"   name="cant4[]" id="cant4[]" value="'+cant4+'"></td>'+
         '<td><input type="hidden"   name="ing5[]" id="ing5[]" value="'+ing5+'"></td>'+
         '<td><input type="hidden"   name="cant5[]" id="cant5[]" value="'+cant5+'"></td>'+
+        '<td><input type="hidden"   name="ing6[]" id="ing6[]" value="'+ing6+'"></td>'+
+        '<td><input type="hidden"   name="cant6[]" id="cant6[]" value="'+cant6+'"></td>'+
+        '<td><input type="hidden"   name="ing7[]" id="ing7[]" value="'+ing7+'"></td>'+
+        '<td><input type="hidden"   name="cant7[]" id="cant7[]" value="'+cant7+'"></td>'+
         '<td><input type="number" readonly  name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
         '<td><input type="number" readonly  name="descuento[]" value="'+descuento+'"></td>'+
         '<td><span id="subtotal'+cont+'" name="subtotal">'+subtotal+'</span></td>'+

@@ -21,7 +21,7 @@ if ($_SESSION['compras']==1) {
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Ingresos ingredientes<button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
+  <h1 class="box-title">Ingresos ingredientes <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
   <div class="box-tools pull-right">
     
   </div>
@@ -35,7 +35,6 @@ if ($_SESSION['compras']==1) {
       <th>Fecha</th>
       <th>Proveedor</th>
       <th>Usuario</th>
-      <th>Documento</th>
       <th>Número</th>
       <th>Total Compra</th>
       <th>Estado</th>
@@ -47,7 +46,6 @@ if ($_SESSION['compras']==1) {
       <th>Fecha</th>
       <th>Proveedor</th>
       <th>Usuario</th>
-      <th>Documento</th>
       <th>Número</th>
       <th>Total Compra</th>
       <th>Estado</th>
@@ -67,26 +65,7 @@ if ($_SESSION['compras']==1) {
       <label for="">Fecha(*): </label>
       <input class="form-control" type="date" name="fecha_hora" id="fecha_hora" required>
     </div>
-     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Tipo Comprobante(*): </label>
-     <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required>
-       <option value="Boleta">Boleta</option>
-       <option value="Factura">Factura</option>
-       <option value="Ticket">Ticket</option>
-     </select>
-    </div>
-     <div class="form-group col-lg-2 col-md-2 col-xs-6">
-      <label for="">Serie: </label>
-      <input class="form-control" type="text" name="serie_comprobante" id="serie_comprobante" maxlength="7" placeholder="Serie">
-    </div>
-     <div class="form-group col-lg-2 col-md-2 col-xs-6">
-      <label for="">Número: </label>
-      <input class="form-control" type="text" name="num_comprobante" id="num_comprobante" maxlength="10" placeholder="Número" required>
-    </div>
-    <div class="form-group col-lg-2 col-md-2 col-xs-6">
-      <label for="">Impuesto: </label>
-      <input class="form-control" type="text" name="impuesto" id="impuesto">
-    </div>
+    
     <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
      <a data-toggle="modal" href="#myModal">
        <button id="btnAgregarArt" type="button" class="btn btn-primary"><span class="fa fa-plus"></span>Agregar Ingrediente</button>

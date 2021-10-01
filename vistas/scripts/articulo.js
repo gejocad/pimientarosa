@@ -44,6 +44,17 @@ function init(){
 });
  
 
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing6").html(r);
+	$("#ing6").selectpicker('refresh');
+});
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing7").html(r);
+	$("#ing7").selectpicker('refresh');
+});
 
  
 
@@ -173,6 +184,10 @@ function mostrar(idarticulo){
 			$("#ing5").val(data.ing5);
 			$("#ing5").selectpicker('refresh');
 			$("#cant5").val(data.cant5);
+			$("#ing6").selectpicker('refresh');
+			$("#cant6").val(data.cant5);
+			$("#ing7").selectpicker('refresh');
+			$("#cant7").val(data.cant5);
 			generarbarcode();
 		})
 }

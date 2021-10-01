@@ -64,7 +64,7 @@ if ($_SESSION['almacen']==1) {
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">stock</label>
-      <input class="form-control" type="number" name="stock" id="stock"  required>
+      <input class="form-control" type="number" name="stock" id="stock"  value="0" readonly  required>
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Descripcion</label>
@@ -127,6 +127,22 @@ if ($_SESSION['almacen']==1) {
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Porciones</label>
       <input class="form-control" type="number" name="cant5" id="cant5" placeholder="0">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing6" id="ing6" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant6" id="cant6" placeholder="0">
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Ingrediente:</label>
+      <select name="ing7" id="ing7" class="form-control selectpicker" data-Live-search="true"></select>
+    </div>
+       <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Porciones</label>
+      <input class="form-control" type="number" name="cant7" id="cant7" placeholder="0">
     </div>
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
