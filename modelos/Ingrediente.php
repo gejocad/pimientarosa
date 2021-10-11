@@ -17,10 +17,13 @@ public function insertar($codigo,$nombre,$stock,$descripcion){
 }
 
 public function editar($idingrediente,$codigo,$nombre,$stock,$descripcion){
-	$sql="UPDATE ingrediente SET codigo='$codigo', nombre='$nombre',stock='$stock',descripcion='$descripcion' 
+	$sql="UPDATE ingrediente SET codigo='$codigo',nombre='$nombre',stock='$stock',descripcion='$descripcion' 
 	WHERE idingrediente='$idingrediente'";
 	return ejecutarConsulta($sql);
 }
+
+
+
 public function desactivar($idingrediente){
 	$sql="UPDATE ingrediente SET condicion='0' WHERE idingrediente='$idingrediente'";
 	return ejecutarConsulta($sql);

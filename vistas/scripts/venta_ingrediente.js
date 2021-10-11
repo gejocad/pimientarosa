@@ -9,6 +9,52 @@ function init(){
    	guardaryeditar(e);
    });
 
+   
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing1").html(r);
+	$("#ing1").selectpicker('refresh');
+});
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing2").html(r);
+	$("#ing2").selectpicker('refresh');
+});
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing3").html(r);
+	$("#ing3").selectpicker('refresh');
+});
+ 
+
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing4").html(r);
+	$("#ing4").selectpicker('refresh');
+});
+ 
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing5").html(r);
+	$("#ing5").selectpicker('refresh');
+});
+ 
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing6").html(r);
+	$("#ing6").selectpicker('refresh');
+});
+
+   //cargamos los items al celect ingrediente1
+   $.post("../ajax/ingrediente.php?op=select", function(r){
+	$("#ing7").html(r);
+	$("#ing7").selectpicker('refresh');
+});
 
 
 }
@@ -48,7 +94,6 @@ function mostrarform(flag){
 		//$("#btnGuardar").prop("disabled",false);
 		$("#btnagregar").hide();
 
-		$("#btnGuardar").hide();
 		$("#btnCancelar").show();
 		detalles=0;
 		$("#btnAgregarArt").show();
@@ -69,7 +114,7 @@ function cancelarform(){
 
 //funcion listar
 function listar(){
-	tabla=$('#tbllistado').dataTable({
+	tabla=$('#tbllistado').DataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
@@ -91,7 +136,7 @@ function listar(){
 		"bDestroy":true,
 		"iDisplayLength":5,//paginacion
 		"order":[[0,"desc"]]//ordenar (columna, orden)
-	}).DataTable();
+	});
 }
 
 
@@ -118,40 +163,49 @@ function guardaryeditar(e){
      limpiar();
 }
 
-function mostrar(idventa){
-	$.post("../ajax/venta_ingrediente.php?op=mostrar",{idventa : idventa},
+function mostrar(iddetalle_venta){
+	$.post("../ajax/venta_ingrediente.php?op=mostrar",{iddetalle_venta : iddetalle_venta},
 		function(data,status)
 		{
 			data=JSON.parse(data);
 			mostrarform(true);
 
-			$("#idcliente").val(data.idcliente);
-			$("#idcliente").selectpicker('refresh');
-			$("#tipo_comprobante").val(data.tipo_comprobante);
-			$("#tipo_comprobante").selectpicker('refresh');
-			$("#serie_comprobante").val(data.serie_comprobante);
-			$("#num_comprobante").val(data.num_comprobante);
-			$("#fecha_hora").val(data.fecha);
-			$("#impuesto").val(data.impuesto);
-			$("#idventa").val(data.idventa);
+			$("#idarticulo").val(data.idarticulo);
+			$("#stock").val(data.cantidad);
+			$("#nombre").val(data.nombre);
+			$("#ing1").val(data.ing1);
+			$("#ing1").selectpicker('refresh');
+			$("#cant1").val(data.cant1);
+			$("#ing2").val(data.ing2);
+			$("#ing2").selectpicker('refresh');
+			$("#cant2").val(data.cant2);
+			$("#ing3").val(data.ing3);
+			$("#ing3").selectpicker('refresh');
+			$("#cant3").val(data.cant3);
+			$("#ing4").val(data.ing4);
+			$("#ing4").selectpicker('refresh');
+			$("#cant4").val(data.cant4);
+			$("#ing5").val(data.ing5);
+			$("#ing5").selectpicker('refresh');
+			$("#cant5").val(data.cant5);
+			$("#ing6").selectpicker('refresh');
+			$("#cant6").val(data.cant5);
+			$("#ing7").selectpicker('refresh');
+			$("#cant7").val(data.cant5);
 			
 			//ocultar y mostrar los botones
-			$("#btnGuardar").hide();
 			$("#btnCancelar").show();
 			$("#btnAgregarArt").hide();
 		});
-	$.post("../ajax/venta_ingrediente.php?op=listarDetalle&id="+idventa,function(r){
-		$("#detalles").html(r);
-	});
 
 }
 
 
 //funcion para desactivar
-function anular(idventa){
+function anular(iddetalle_venta){
 	bootbox.confirm("¿Esta seguro de desactivar este dato?", function(result){
 		if (result) {
-			$.post("../ajax/venta_ingrediente.php?op=anular", {idventa : idventa}, function(e){
+			$.post("../ajax/venta_ingrediente.php?op=anular", {iddetalle_venta : iddetalle_venta}, function(e){
 				bootbox.alert(e);
 				tabla.ajax.reload();
 			});
@@ -164,7 +218,6 @@ var impuesto=18;
 var cont=0;
 var detalles=0;
 
-$("#btnGuardar").hide();
 $("#tipo_comprobante").change(marcarImpuesto);
 
 function marcarImpuesto(){

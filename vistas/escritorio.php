@@ -21,6 +21,10 @@ if ($_SESSION['escritorio']==1) {
   $regv=$rsptav->fetch_object();
   $totalv=$regv->total_venta;
 
+  $rsptaci = $consulta->totalcompraingredientehoy();
+  $regci=$rsptaci->fetch_object();
+  $totalci=$regci->total_compra;
+
   //obtener valores para cargar al grafico de barras
   $compras10 = $consulta->comprasultimos_10dias();
   $fechasc='';
@@ -74,12 +78,12 @@ if ($_SESSION['escritorio']==1) {
       <h4 style="font-size: 17px;">
         <strong>$ <?php echo number_format($totalc, 2, ',', '.'); ?> </strong>
       </h4>
-      <p>Compras</p>
+      <p>Compras articulos</p>
     </div>
     <div class="icon">
       <i class="ion ion-bag"></i>
     </div>
-    <a href="ingreso.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
+    <a href="ingreso.php" class="small-box-footer">Compras articulos <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -94,6 +98,34 @@ if ($_SESSION['escritorio']==1) {
       <i class="ion ion-bag"></i>
     </div>
     <a href="venta.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+  </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+  <div class="small-box bg-primary">
+    <div class="inner">
+      <h4 style="font-size: 17px;">
+        <strong>$ <?php echo number_format($totalci, 2, ',', '.'); ?> </strong>
+      </h4>
+      <p>Compras ingredientes</p>
+    </div>
+    <div class="icon">
+      <i class="ion ion-bag"></i>
+    </div>
+    <a href="ingreso_ingrediente.php" class="small-box-footer">Compras ingredientes <i class="fa fa-arrow-circle-right"></i></a>
+  </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+  <div class="small-box bg-yellow">
+    <div class="inner">
+      <h4 style="font-size: 17px;">
+        <strong>$ <?php echo number_format(($totalv-($totalc+$totalci)), 2, ',', '.'); ?> </strong>
+      </h4>
+      <p>Ganancias</p>
+    </div>
+    <div class="icon">
+      <i class="ion ion-bag"></i>
+    </div>
+    <a href="venta.php" class="small-box-footer">Total de ganancias <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
 </div>

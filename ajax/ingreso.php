@@ -2,7 +2,7 @@
 require_once "../modelos/Ingreso.php";
 if (strlen(session_id())<1) 
 	session_start();
-
+	
 $ingreso=new Ingreso();
 
 $idingreso=isset($_POST["idingreso"])? limpiarCadena($_POST["idingreso"]):"";
@@ -21,8 +21,7 @@ switch ($_GET["op"]) {
 		$rspta=$ingreso->insertar($idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$total_compra,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_compra"],$_POST["precio_venta"]);
 		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
 	}else{
-        $rspta=$ingreso->editar($idingreso,$idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$total_compra);
-		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+        
 	}
 		break;
 	

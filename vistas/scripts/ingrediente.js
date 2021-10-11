@@ -45,7 +45,7 @@ function cancelarform(){
 
 //funcion listar
 function listar(){
-	tabla=$('#tbllistado').dataTable({
+	tabla=$('#tbllistado').DataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
@@ -66,30 +66,41 @@ function listar(){
 		},
 		"bDestroy":true,
 		"iDisplayLength":5,//paginacion
-		"order":[[0,"desc"]]//ordenar (columna, orden)
-	}).DataTable();
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		"createdRow": function( row, data){
+			if( data[3] <= 5  ){
+				$(row).css('background-color', '#ff3333');
+			}
+			else if( data[3] >= 5 && data[3] <=30 ){
+				$(row).css('background-color', '#A497E5');
+			}
+			else{
+				$(row).css('background-color', '#9EF395');
+			}
+
+		}})
 }
 //funcion para guardaryeditar
 function guardaryeditar(e){
-     e.preventDefault();//no se activara la accion predeterminada 
-     $("#btnGuardar").prop("disabled",true);
-     var formData=new FormData($("#formulario")[0]);
+	e.preventDefault();//no se activara la accion predeterminada 
+	$("#btnGuardar").prop("disabled",true);
+	var formData=new FormData($("#formulario")[0]);
 
-     $.ajax({
-     	url: "../ajax/ingrediente.php?op=guardaryeditar",
-     	type: "POST",
-     	data: formData,
-     	contentType: false,
-     	processData: false,
+	$.ajax({
+		url: "../ajax/ingrediente.php?op=guardaryeditar",
+		type: "POST",
+		data: formData,
+		contentType: false,
+		processData: false,
 
-     	success: function(datos){
-     		bootbox.alert(datos);
-     		mostrarform(false);
-     		tabla.ajax.reload();
-     	}
-     });
+		success: function(datos){
+			bootbox.alert(datos);
+			mostrarform(false);
+			tabla.ajax.reload();
+		}
+	});
 
-     limpiar();
+	limpiar();
 }
 
 function mostrar(idingrediente){
@@ -98,7 +109,7 @@ function mostrar(idingrediente){
 		{
 			data=JSON.parse(data);
 			mostrarform(true);
-
+			$("#idingrediente").val(data.idingrediente);
 			$("#codigo").val(data.codigo);
 			$("#nombre").val(data.nombre);
 			$("#stock").val(data.stock);

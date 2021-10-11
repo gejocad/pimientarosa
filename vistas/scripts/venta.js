@@ -711,7 +711,7 @@ function agregarDetalle(idarticulo,nombre, ing1, cant1, ing2, cant2, ing3, cant3
 		var fila='<tr class="filas" id="fila'+cont+'">'+
         '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
         '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+nombre+'</td>'+
-        '<td><input type="hidden"   name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
+        '<td><input type="number"   name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
         '<td><input type="hidden"   name="ing1[]" id="ing1[]" value="'+ing1+'"></td>'+
         '<td><input type="hidden"   name="cant1[]" id="cant1[]" value="'+cant1+'"></td>'+
         '<td><input type="hidden"   name="ing2[]" id="ing2[]" value="'+ing2+'"></td>'+

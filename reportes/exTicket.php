@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 //activamos almacenamiento en el buffer
 ob_start();
 if (strlen(session_id())<1) 
@@ -102,14 +102,14 @@ $reg=$rspta->fetch_object();
 
 	<!--mostramos lod detalles de la venta -->
 
-	<table border="0" align="center" width="300px">
+	<table border="0" align="center" width="210px">
 		<tr>
 			<td>CANT.</td>
 			<td>DESCRIPCION</td>
 			<td align="right">IMPORTE</td>
 		</tr>
 		<tr>
-			<td colspan="3">=============================================</td>
+			<td colspan="3">===========================</td>
 		</tr>
 		<?php
 		$rsptad = $venta->ventadetalles($_GET["id"]);
@@ -118,7 +118,7 @@ $reg=$rspta->fetch_object();
 		 	echo "<tr>";
 		 	echo "<td>".$regd->cantidad."</td>";
 		 	echo "<td>".$regd->articulo."</td>";
-		 	echo "<td align='right'>$ ".number_format($regd->subtotal, 2, ',', ' ')."</td>";
+		 	echo "<td align='right'>$ ".number_format($regd->subtotal, 0, ',', ' ')."</td>";
 		 	echo "</tr>";
 		 	$cantidad+=$regd->cantidad;
 		 } 
@@ -128,7 +128,7 @@ $reg=$rspta->fetch_object();
 		<tr>
 			<td>&nbsp;</td>
 			<td align="right"><b>TOTAL:</b></td>
-			<td align="right"><b>$ <?php echo number_format($reg->total_venta, 2, ',', ' '); ?></b></td>
+			<td align="right"><b>$ <?php echo number_format($reg->total_venta, 0, ',', ' '); ?></b></td>
 		</tr>
 
 		<tr>
@@ -139,9 +139,6 @@ $reg=$rspta->fetch_object();
 		</tr>
 		<tr>
 			<td colspan="3" align="center">¡Gracias por su compra!</td>
-		</tr>
-		<tr>
-			<td colspan="3" align="center">LA PRESENTE FACTURA DE VENTA ES UN TITULO VALOR SAEGUN ART. 774 DEL CODIGO DE COMERCIO 5 DE LA LEY 1231</td>
 		</tr>
 		<tr>
 			<td colspan="3" align="center">Para cualquier cambio o garantia es indispensable presentar las factura.</td>

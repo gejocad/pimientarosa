@@ -27,7 +27,7 @@ public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comproba
 	 return $sw;
 }
 
-public function editar($idventa,$idcliente,$idusuario,$mesa,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
+public function editar($idventa,$idcliente,$idusuario,$mesa,$total_venta,$idarticulo,$cantidad,$ing1,$cant1,$ing2,$cant2,$ing3,$cant3,$ing4,$cant4,$ing5,$cant5,$ing6,$cant6,$ing7,$cant7,$precio_venta,$descuento){
 	$sql="UPDATE venta SET idcliente='$idcliente', idusuario='$idusuario',mesa='$mesa',total_venta=total_venta+'$total_venta' 
 	WHERE idventa='$idventa'";
 	 $idventanew=ejecutarConsulta_retornarID($sql);
@@ -35,7 +35,7 @@ public function editar($idventa,$idcliente,$idusuario,$mesa,$total_venta,$idarti
 	 $sw=true;
 	 while ($num_elementos < count($idarticulo)) {
 		 
-		$sql_detalle="INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) VALUES('$idventa','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]')";
+		$sql_detalle="INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento,ing1,cant1,ing2,cant2,ing3,cant3,ing4,cant4,ing5,cant5,ing6,cant6,ing7,cant7) VALUES('$idventa','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]','$ing1[$num_elementos]','$cant1[$num_elementos]','$ing2[$num_elementos]','$cant2[$num_elementos]','$ing3[$num_elementos]','$cant3[$num_elementos]','$ing4[$num_elementos]','$cant4[$num_elementos]','$ing5[$num_elementos]','$cant5[$num_elementos]','$ing6[$num_elementos]','$cant6[$num_elementos]','$ing7[$num_elementos]','$cant7[$num_elementos]')";
 		ejecutarConsulta($sql_detalle) or $sw=false;
 
 	 	$num_elementos=$num_elementos+1;

@@ -5,15 +5,25 @@ if (strlen(session_id())<1)
 
 $venta_ingrediente = new Venta_ingrediente();
 
-$idventa=isset($_POST["idventa"])? limpiarCadena($_POST["idventa"]):"";
-$idcliente=isset($_POST["idcliente"])? limpiarCadena($_POST["idcliente"]):"";
-$idcliente=isset($_POST["idcliente"])? limpiarCadena($_POST["idcliente"]):"";
-$idusuario=$_SESSION["idusuario"];
-$tipo_comprobante=isset($_POST["tipo_comprobante"])? limpiarCadena($_POST["tipo_comprobante"]):"";
-$serie_comprobante=isset($_POST["serie_comprobante"])? limpiarCadena($_POST["serie_comprobante"]):"";
-$num_comprobante=isset($_POST["num_comprobante"])? limpiarCadena($_POST["num_comprobante"]):"";
-$fecha_hora=isset($_POST["fecha_hora"])? limpiarCadena($_POST["fecha_hora"]):"";
-$total_venta=isset($_POST["total_venta"])? limpiarCadena($_POST["total_venta"]):"";
+$iddetalle_venta=isset($_POST["iddetalle_venta"])? limpiarCadena($_POST["iddetalle_venta"]):"";
+$idarticulo=isset($_POST["idarticulo"])? limpiarCadena($_POST["idarticulo"]):"";
+$codigo=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
+$nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
+$stock=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
+$ing1=isset($_POST["ing1"])? limpiarCadena($_POST["ing1"]):"";
+$cant1=isset($_POST["cant1"])? limpiarCadena($_POST["cant1"]):"";
+$ing2=isset($_POST["ing2"])? limpiarCadena($_POST["ing2"]):"";
+$cant2=isset($_POST["cant2"])? limpiarCadena($_POST["cant2"]):"";
+$ing3=isset($_POST["ing3"])? limpiarCadena($_POST["ing3"]):"";
+$cant3=isset($_POST["cant3"])? limpiarCadena($_POST["cant3"]):"";
+$ing4=isset($_POST["ing4"])? limpiarCadena($_POST["ing4"]):"";
+$cant4=isset($_POST["cant4"])? limpiarCadena($_POST["cant4"]):"";
+$ing5=isset($_POST["ing5"])? limpiarCadena($_POST["ing5"]):"";
+$cant5=isset($_POST["cant5"])? limpiarCadena($_POST["cant5"]):"";
+$ing6=isset($_POST["ing6"])? limpiarCadena($_POST["ing6"]):"";
+$cant6=isset($_POST["cant6"])? limpiarCadena($_POST["cant6"]):"";
+$ing7=isset($_POST["ing7"])? limpiarCadena($_POST["ing7"]):"";
+$cant7=isset($_POST["cant7"])? limpiarCadena($_POST["cant7"]):"";
 
 
 
@@ -21,9 +31,23 @@ $total_venta=isset($_POST["total_venta"])? limpiarCadena($_POST["total_venta"]):
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
-	if (empty($idventa)) {
-		$rspta=$venta->insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_venta"],$_POST["descuento"]); 
+	if (empty($iddetalle_venta)) {
+		$rspta=$venta_ingrediente->insertar($idarticulo,$nombre,$stock);
 		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+		$rspta=$venta_ingrediente->insertar1($ing1,$cant1);
+		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->insertar2($ing2,$cant2);
+		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->insertar3($ing3,$cant3);
+		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->insertar4($ing4,$cant4);
+		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->insertar5($ing5,$cant5);
+		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->insertar6($ing6,$cant6);
+		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->insertar7($ing7,$cant7);
+		echo $rspta ? "" : "";
 	}else{
         
 	}
@@ -31,48 +55,15 @@ switch ($_GET["op"]) {
 	
 
 	case 'anular':
-		$rspta=$venta->anular($idventa);
+		$rspta=$venta_ingrediente->anular($iddetalle_venta);
 		echo $rspta ? "Ingreso anulado correctamente" : "No se pudo anular el ingreso";
 		break;
 	
 	case 'mostrar':
-		$rspta=$venta->mostrar($idventa);
+		$rspta=$venta_ingrediente->mostrar($iddetalle_venta);
 		echo json_encode($rspta);
 		break;
 
-	case 'listarDetalle':
-		//recibimos el idventa
-		$id=$_GET['id'];
-
-		$rspta=$venta->listarDetalle($id);
-		$total=0;
-		echo ' <thead style="background-color:#A9D0F5">
-        <th>Opciones</th>
-        <th>Articulo</th>
-        <th>Cantidad</th>
-        <th>Precio Venta</th>
-        <th>Descuento</th>
-        <th>Subtotal</th>
-       </thead>';
-		while ($reg=$rspta->fetch_object()) {
-			echo '<tr class="filas">
-			<td></td>
-			<td>'.$reg->nombre.'</td>
-			<td>'.$reg->cantidad.'</td>
-			<td>'.$reg->precio_venta.'</td>
-			<td>'.$reg->descuento.'</td>
-			<td>'.$reg->subtotal.'</td></tr>';
-			$total=$total+($reg->precio_venta*$reg->cantidad-$reg->descuento);
-		}
-		echo '<tfoot>
-         <th>TOTAL</th>
-         <th></th>
-         <th></th>
-         <th></th>
-         <th></th>
-         <th><h4 id="total">S/. '.$total.'</h4><input type="hidden" name="total_venta" id="total_venta"></th>
-       </tfoot>';
-		break;
 
 		case 'listar':
 			$rspta=$venta_ingrediente->listar();
@@ -80,24 +71,26 @@ switch ($_GET["op"]) {
 		
 			while ($reg=$rspta->fetch_object()) {
 			$data[]=array(
-					"0"=>$reg->idventa,
-					"1"=>$reg->nombre,
-					"2"=>$reg->cantidad,
-					"3"=>$reg->ing1,
-					"4"=>$reg->cant1,
-					"5"=>$reg->ing2,
-					"6"=>$reg->cant2,
-					"7"=>$reg->ing3,
-					"8"=>$reg->cant3,
-					"9"=>$reg->ing4,
-					"10"=>$reg->cant4,
-					"11"=>$reg->ing5,
-					"12"=>$reg->cant5,
-					"13"=>$reg->ing6,
-					"14"=>$reg->cant6,
-					"15"=>$reg->ing7,
-					"16"=>$reg->cant7,
-					"17"=>$reg->precio_venta
+				"0"=>($reg->estado=='Aceptado')?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->iddetalle_venta.')"><i class="fa fa-eye"></i></button>'.' '.'<button class="btn btn-danger btn-xs" onclick="anular('.$reg->iddetalle_venta.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->iddetalle_venta.')"><i class="fa fa-eye"></i></button>',
+					"1"=>$reg->idventa,
+					"2"=>$reg->nombre,
+					"3"=>$reg->cantidad,
+					"4"=>$reg->ing1,
+					"5"=>$reg->cant1,
+					"6"=>$reg->ing2,
+					"7"=>$reg->cant2,
+					"8"=>$reg->ing3,
+					"9"=>$reg->cant3,
+					"10"=>$reg->ing4,
+					"11"=>$reg->cant4,
+					"12"=>$reg->ing5,
+					"13"=>$reg->cant5,
+					"14"=>$reg->ing6,
+					"15"=>$reg->cant6,
+					"16"=>$reg->ing7,
+					"17"=>$reg->cant7,
+					"18"=>$reg->precio_venta,
+					"19"=>$reg->estado
 				  );
 			}
 			$results=array(

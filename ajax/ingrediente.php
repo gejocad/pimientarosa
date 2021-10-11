@@ -11,14 +11,14 @@ $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
-	if (empty($idingrediente)) {
-		$rspta=$ingrediente->insertar($codigo,$nombre,$stock,$descripcion);
-		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
-	}else{
-         $rspta=$ingrediente->editar($idingrediente,$codigo,$nombre,$stock,$descripcion);
-		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
-	}
-		break;
+		if (empty($idingrediente)) {
+			$rspta=$ingrediente->insertar($codigo,$nombre,$stock,$descripcion);
+			echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+		}else{
+			 $rspta=$ingrediente->editar($idingrediente,$codigo,$nombre,$stock,$descripcion);
+			echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
+		}
+			break;
 	
 
 	case 'desactivar':
@@ -30,10 +30,10 @@ switch ($_GET["op"]) {
 		echo $rspta ? "Datos activados correctamente" : "No se pudo activar los datos";
 		break;
 	
-	case 'mostrar':
-		$rspta=$ingrediente->mostrar($idingrediente);
-		echo json_encode($rspta);
-		break;
+		case 'mostrar':
+			$rspta=$ingrediente->mostrar($idingrediente);
+			echo json_encode($rspta);
+			break;
 
     case 'listar':
 		$rspta=$ingrediente->listar();

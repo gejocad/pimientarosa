@@ -10,32 +10,65 @@ public function __construct(){
 }
 
 //metodo insertar registro
-public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
-	$sql="INSERT INTO venta (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,fecha_hora,impuesto,total_venta,estado) VALUES ('$idcliente','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$fecha_hora','$impuesto','$total_venta','Aceptado')";
-	//return ejecutarConsulta($sql);
-	 $idventanew=ejecutarConsulta_retornarID($sql);
-	 $num_elementos=0;
-	 $sw=true;
-	 while ($num_elementos < count($idarticulo)) {
-
-	 	$sql_detalle="INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) VALUES('$idventanew','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]')";
-
-	 	ejecutarConsulta($sql_detalle) or $sw=false;
-
-	 	$num_elementos=$num_elementos+1;
-	 }
-	 return $sw;
+public function insertar($idarticulo,$nombre,$stock){
+	$sql="UPDATE articulo SET nombre='$nombre',stock='$stock'
+	WHERE idarticulo='$idarticulo'";
+	return ejecutarConsulta($sql);
 }
 
-public function anular($idventa){
-	$sql="UPDATE venta SET estado='Anulado' WHERE idventa='$idventa'";
+public function insertar1($ing1,$cant1){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant1' 
+	WHERE idingrediente='$ing1'";
+	return ejecutarConsulta($sql);
+}
+
+public function insertar2($ing2,$cant2){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant2' 
+	WHERE idingrediente='$ing2'";
+	return ejecutarConsulta($sql);
+}
+public function insertar3($ing3,$cant3){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant3' 
+	WHERE idingrediente='$ing3'";
+	return ejecutarConsulta($sql);
+}
+public function insertar4($ing4,$cant4){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant4' 
+	WHERE idingrediente='$ing4'";
+	return ejecutarConsulta($sql);
+}
+public function insertar5($ing5,$cant5){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant5' 
+	WHERE idingrediente='$ing5'";
+	return ejecutarConsulta($sql);
+}
+public function insertar6($ing6,$cant6){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant6' 
+	WHERE idingrediente='$ing6'";
+	return ejecutarConsulta($sql);
+}
+public function insertar7($ing7,$cant7){
+
+	$sql="UPDATE ingrediente SET stock=stock+'$cant7' 
+	WHERE idingrediente='$ing7'";
+	return ejecutarConsulta($sql);
+}
+
+public function anular($iddetalle_venta){
+	$sql="UPDATE detalle_venta SET estado='Anulado' WHERE iddetalle_venta='$iddetalle_venta'";
 	return ejecutarConsulta($sql);
 }
 
 
 //implementar un metodopara mostrar los datos de unregistro a modificar
-public function mostrar($idventa){
-	$sql="SELECT v.idventa,DATE(v.fecha_hora) as fecha,v.idcliente,p.nombre as cliente,u.idusuario,u.nombre as usuario, v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE idventa='$idventa'";
+public function mostrar($iddetalle_venta){
+	$sql="SELECT dv.iddetalle_venta,dv.idventa,dv.idarticulo,a.nombre,dv.cantidad,dv.precio_venta, dv.ing1, dv.cant1, dv.ing2, dv.cant2, dv.ing3, dv.cant3, dv.ing4, dv.cant4, dv.ing5, dv.cant5, dv.ing6, dv.cant6, dv.ing7, dv.cant7, dv.precio_venta,dv.estado FROM detalle_venta dv INNER JOIN articulo a ON dv.idarticulo=a.idarticulo WHERE iddetalle_venta='$iddetalle_venta'";
 	return ejecutarConsultaSimpleFila($sql);
 }
 
@@ -46,7 +79,7 @@ public function listarDetalle($idventa){
 
 //listar registros
 public function listar(){
-	$sql="SELECT dv.idventa,dv.idarticulo,a.nombre,dv.cantidad,dv.precio_venta, dv.ing1, dv.cant1, dv.ing2, dv.cant2, dv.ing3, dv.cant3, dv.ing4, dv.cant4, dv.ing5, dv.cant5, dv.ing6, dv.cant6, dv.ing7, dv.cant7, dv.precio_venta FROM detalle_venta dv INNER JOIN articulo a ON dv.idarticulo=a.idarticulo ORDER BY dv.idventa DESC";
+	$sql="SELECT dv.iddetalle_venta,dv.idventa,dv.idarticulo,a.nombre,dv.cantidad,dv.precio_venta, dv.ing1, dv.cant1, dv.ing2, dv.cant2, dv.ing3, dv.cant3, dv.ing4, dv.cant4, dv.ing5, dv.cant5, dv.ing6, dv.cant6, dv.ing7, dv.cant7, dv.precio_venta,dv.estado FROM detalle_venta dv INNER JOIN articulo a ON dv.idarticulo=a.idarticulo ORDER BY dv.idventa DESC";
 	return ejecutarConsulta($sql);
 }
 
