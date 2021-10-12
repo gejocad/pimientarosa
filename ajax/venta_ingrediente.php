@@ -48,6 +48,8 @@ switch ($_GET["op"]) {
 		echo $rspta ? "" : "";
 		$rspta=$venta_ingrediente->insertar7($ing7,$cant7);
 		echo $rspta ? "" : "";
+		$rspta=$venta_ingrediente->anular($iddetalle_venta);
+		echo $rspta ? "" : "";
 	}else{
         
 	}
